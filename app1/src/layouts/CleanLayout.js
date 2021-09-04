@@ -7,7 +7,7 @@ import Portfolio from '../components/Portfolio'
 export default function CleanLayout() {
   return (
     <>
-      <h1 class="w-full text-center">APP 2</h1>
+      <h1 class="w-full text-center">APP 1</h1>
       <div class="md:flex flex-col md:flex-row md:min-h-screen w-full h-screen">
         <div class="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0">
           <nav class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">

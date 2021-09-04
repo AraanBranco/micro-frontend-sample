@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  container:
+    container_name: site-container
+    build:
+      context: .
+      dockerfile: site-container/Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - app1
+      - app2
+    environment:
+      PORT: 3000
+      REACT_APP_FIRST_APP_URL: http://localhost:3001
+      REACT_APP_SECOND_APP_URL: http://localhost:3002
+
+  app1:
+    container_name: site-app1
+    build:
+      context: .
+      dockerfile: app1/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+
+  app2:
+    container_name: site-app2
+    build:
+      context: .
+      dockerfile: app2/Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      PORT: 3002
